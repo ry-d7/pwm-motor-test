@@ -14,7 +14,7 @@ enum {
     PwmLevelMax = 500,
 };
 
-int16_t lvl = 100;
+int16_t lvl = 0;
 
 bool sw_state_p = 0;
 bool sw_state_m = 0;
