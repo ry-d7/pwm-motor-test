@@ -4,7 +4,7 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
-#define PIN_PWM (15)
+#define PIN_PWM (13)
 
 #define PIN_SW_P (0)
 #define PIN_SW_M (4)
