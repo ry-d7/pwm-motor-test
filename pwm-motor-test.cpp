@@ -6,6 +6,8 @@
 
 #define PIN_PWM (13)
 
+#define PIN_PWRLED (8)
+
 #define PIN_SW_P (0)
 #define PIN_SW_M (4)
 
@@ -29,6 +31,14 @@ void init_sw()
 
     gpio_set_pulls(PIN_SW_P, true, false);
     gpio_set_pulls(PIN_SW_M, true, false);
+}
+
+void init_led()
+{
+    // turn on the power led
+    gpio_init(PIN_PWRLED);
+    gpio_set_dir(PIN_PWRLED, true);
+    gpio_put(PIN_PWRLED, true);
 }
 
 void process_sw()
@@ -74,6 +84,8 @@ int main()
     pwm_set_enabled(slice, true);
 
     init_sw();
+
+    init_led();
 
     while (true) {
         sleep_ms(50);
